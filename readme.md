@@ -28,20 +28,13 @@ Packages and modules for using [Nix][nix] ❄️ and [Radicle][radicle] 👾 tog
 │           └── radicle.nix
 │                { for Radicle seed nodes
 ├── overlay
-│   └── default.nix
 ├── pkg
 │    { packages (in flat Nix RFC 140 style)
-│   ├── default.nix
 │   ├── fetchFromRadicle
-│   │   └── package.nix
 │   ├── fetchRadiclePatch
-│   │   └── package.nix
 │   ├── radicle-node-community
-│   │   └── package.nix
 │   ├── radicle-node-master
-│   │   └── package.nix
 │   └── rips
-│       └── package.nix
 └── update.sh
 ```
 
