@@ -35,6 +35,7 @@ Packages and modules for using [Nix][nix] ❄️ and [Radicle][radicle] 👾 tog
 ├── pkg
 │    { packages (in flat Nix RFC 140 style)
 │   ├── fetchFromRadicle
+│   ├── fetchFromRadicleBridge
 │   ├── fetchRadiclePatch
 │   └── rips
 └── update.sh
