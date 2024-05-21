@@ -136,7 +136,7 @@
 
       nonBrokenRadiclePackages = filterAttrs (_: v: !(attrByPath ["meta" "broken"] false v)) (removeFetchers radiclePackages);
 
-      removeFetchers = x: builtins.removeAttrs x ["fetchFromRadicle" "fetchRadiclePatch"]; # TODO(lorenzleutgeb): Think about fetchers...
+      removeFetchers = x: builtins.removeAttrs x ["fetchFromRadicle" "fetchFromRadicleBridge" "fetchRadiclePatch"]; # TODO(lorenzleutgeb): Think about fetchers...
 
       hooks = pre-commit-hooks.lib.${system}.run {
         src = ./.;
