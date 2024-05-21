@@ -28,12 +28,14 @@ Packages and modules for using [Nix][nix] ❄️ and [Radicle][radicle] 👾 tog
 │           └── radicle.nix
 │                { for Radicle seed nodes
 ├── overlay
+│   ├── community.nix
+│   │    { for community patches
+│   └── master.nix
+│        { aims to track Heartwood's master very closely
 ├── pkg
 │    { packages (in flat Nix RFC 140 style)
 │   ├── fetchFromRadicle
 │   ├── fetchRadiclePatch
-│   ├── radicle-node-community
-│   ├── radicle-node-master
 │   └── rips
 └── update.sh
 ```

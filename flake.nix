@@ -73,7 +73,10 @@
         inherit callPackage dream2nix pkgs;
       };
     in
-      radiclePackages;
+      radiclePackages
+      // {
+        inherit (pkgs) radicle-node-master radicle-node-community;
+      };
 
     rawNixosConfigurations = {};
 
@@ -91,7 +94,14 @@
       rawNixosConfigurations;
     # Then, define the system-specific outputs.
   in ((flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          self.overlays.master
+          self.overlays.community
+          self.overlays.default
+        ];
+      };
 
       radiclePackages = importRadiclePackages pkgs;
 
@@ -252,6 +262,10 @@
         }
         // rawNixosModules;
 
-      overlays.default = import ./overlay/default.nix;
+      overlays = {
+        default = final: prev: importRadiclePackages prev;
+        master = import ./overlay/master.nix {inherit lib;};
+        community = import ./overlay/community.nix {inherit lib;};
+      };
     });
 }

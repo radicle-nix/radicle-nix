@@ -16,3 +16,9 @@ hm/module/services/radicle.nix
 
 pkg
 	packages (in flat Nix RFC 140 style)
+
+overlay/master.nix
+	aims to track Heartwood's master very closely
+
+overlay/community.nix
+	for community patches
