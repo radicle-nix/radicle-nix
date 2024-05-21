@@ -184,6 +184,7 @@
 
         shellHook = let
           banner = pkgs.writeText "radicle-nix-banner" ''
+
             Welcome!
 
             If your goal is to update packages, run
@@ -197,6 +198,7 @@
             Hide this massage by executing
 
             	touch .banner
+
           '';
         in
           hooks.shellHook
