@@ -1,5 +1,5 @@
 {lib}: final: prev:
-lib.overlayRustPackage rec {
+(lib.overlayRustPackage rec {
   inherit final prev;
   old = "radicle-node";
   new = "${old}-community";
@@ -18,4 +18,15 @@ lib.overlayRustPackage rec {
       ];
     cargoHash = "sha256-mcZRS5ErxDceqa0pKEAOpFjOcZrfOEqdRuUO7N6t4RU=";
   };
-}
+})
+// (lib.overlayRustPackage rec {
+  inherit final prev;
+  old = "radicle-node";
+  new = "${old}-debug";
+  override = args: {
+    name = new;
+    buildType = "debug";
+    doCheck = false;
+    cargoHash = "sha256-k8fY57fUK5KxANl+TwXO9CmzRusmQbvhCWzxwwDqOVw=";
+  };
+})
