@@ -87,7 +87,10 @@ in {
           type = str;
           default = "--listen 127.0.0.1:8080";
         };
-        package = mkPackageOption pkgs "radicle-httpd" {};
+        package = mkPackageOption pkgs "radicle-httpd" {
+          nullable = true;
+          default = null;
+        };
       };
       settings = freeform {
         publicExplorer = mkOption {

@@ -63,7 +63,10 @@ in {
       };
       httpd = {
         enable = mkEnableOption "Radicle HTTP Daemon";
-        package = mkPackageOption pkgs "radicle-httpd" {};
+        package = mkPackageOption pkgs "radicle-httpd" {
+          nullable = true;
+          default = null;
+        };
         args = mkOption {
           type = str;
           default = "--listen 127.0.0.1:8080";
