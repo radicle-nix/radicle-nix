@@ -76,7 +76,7 @@ in {
         package = mkPackageOption pkgs "radicle-node" {};
       };
       remote-helper = {
-        package = mkPackageOption pkgs "radicle-remote-helper" {};
+        package = mkPackageOption pkgs "radicle-node" {};
       };
       uri = {
         rad = {
