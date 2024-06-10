@@ -264,8 +264,8 @@
 
       homeModules.default = {
         imports = [
-          ./hm/modules/programs/radicle.nix
-          ./hm/modules/services/radicle.nix
+          ./hm/module/programs/radicle.nix
+          ./hm/module/services/radicle.nix
         ];
       };
 
