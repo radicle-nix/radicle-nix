@@ -73,7 +73,7 @@ in {
         };
       };
       cli = {
-        package = mkPackageOption pkgs "radicle-cli" {};
+        package = mkPackageOption pkgs "radicle-node" {};
       };
       node = {
         args = mkOption {

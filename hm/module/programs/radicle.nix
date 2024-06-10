@@ -73,7 +73,7 @@ in {
     programs.radicle = {
       enable = mkEnableOption "Radicle";
       cli = {
-        package = mkPackageOption pkgs "radicle-cli" {};
+        package = mkPackageOption pkgs "radicle-node" {};
       };
       remote-helper = {
         package = mkPackageOption pkgs "radicle-remote-helper" {};
