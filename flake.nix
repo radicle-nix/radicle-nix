@@ -262,6 +262,13 @@
         }
         // rawNixosModules;
 
+      homeModules.default = {
+        imports = [
+          ./hm/modules/programs/radicle.nix
+          ./hm/modules/services/radicle.nix
+        ];
+      };
+
       overlays = {
         default = final: prev: importRadiclePackages prev;
         master = import ./overlay/master.nix {inherit lib;};
