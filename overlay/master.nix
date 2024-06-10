@@ -5,14 +5,14 @@ lib.overlayRustPackage rec {
   new = "${old}-master";
   override = args: {
     name = new;
-    version = "30c9b0db0ba5939c2949915c9f68c450700d7254";
+    version = "a6e33ec19a662e23e998347ec2dd2d3c90bdb7ee";
 
     src = final.fetchgit {
       inherit (args.src) url;
-      rev = "30c9b0db0ba5939c2949915c9f68c450700d7254";
-      hash = "sha256-KY0aGziu2nVyQ812MughoqXuOcalcq075/eInGsk2zw=";
+      rev = "a6e33ec19a662e23e998347ec2dd2d3c90bdb7ee";
+      hash = "sha256-zLK4OEhSLJaxq2P3jNcSe75XeWGMIG6jE6KgHCSoUH0=";
     };
 
-    cargoHash = "sha256-2Ab4JlTS2WOKIHmTG7Upj2Fl63rXW1+aNPcpEstseao=";
+    cargoHash = "sha256-h3r/92e/y1R4GzSCJD2teSiDnM1i/IG+55+h073adsE=";
   };
 }
