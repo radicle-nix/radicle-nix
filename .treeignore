@@ -12,3 +12,6 @@ infra
 # By convention/RFC, not that important.
 package.nix
 default.nix
+
+# TODO
+check/compat.nix

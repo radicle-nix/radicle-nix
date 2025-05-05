@@ -6,6 +6,8 @@ Packages and modules for using [Nix][nix] ❄️ and [Radicle][radicle] 👾 tog
 
 ```text
 .
+├── check
+│   └── compat.nix
 ├── fast-build.sh
 ├── flake.nix
 ├── hm

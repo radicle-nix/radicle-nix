@@ -10,7 +10,7 @@
       inputs.systems.follows = "systems";
       url = "github:numtide/flake-utils";
     };
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     pre-commit-hooks = {
       inputs = {
@@ -18,6 +18,13 @@
         nixpkgs.follows = "nixpkgs";
       };
       url = "github:cachix/pre-commit-hooks.nix";
+    };
+    radicle-tui = {
+      url = "git+https://seed.radicle.xyz/rad:z39mP9rQAaGmERfUMPULfPUi473tY.git?ref=main";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
     };
     sops-nix = {
       inputs = {
@@ -36,6 +43,7 @@
     nixpkgs,
     pre-commit-hooks,
     sops-nix,
+    radicle-tui,
     ...
   }: let
     # Take Nixpkgs' lib and update it with the definitions in ./lib.nix
@@ -75,12 +83,13 @@
     in
       radiclePackages
       // {
-        inherit (pkgs) radicle-node-master radicle-node-community;
+        inherit (pkgs) radicle-node-master radicle-node-cref;
       };
 
     rawNixosConfigurations = {};
 
-    rawNixosModules.radicle = ./os/module/services/radicle.nix;
+    #rawNixosModules.radicle = ./os/module/services/radicle.nix;
+    rawNixosModules = {};
 
     extendedNixosModules =
       self.nixosModules
@@ -180,7 +189,8 @@
               ]);
           });
         }
-        // (mapAttrs' (name: check: nameValuePair "packages/${name}" check) nonBrokenRadiclePackages);
+        // (mapAttrs' (name: check: nameValuePair "packages/${name}" check) nonBrokenRadiclePackages)
+        // {compat = pkgs.nixosTest (import ./check/compat.nix {inherit pkgs nixpkgs lib;});};
 
       devShells.default = pkgs.mkShell {
         buildInputs =
