@@ -83,7 +83,7 @@
     in
       radiclePackages
       // {
-        inherit (pkgs) radicle-node-master radicle-node-cref;
+        inherit (pkgs) radicle-node-master radicle-node-cref radicle-node-1_2-pre;
       };
 
     rawNixosConfigurations = {};
