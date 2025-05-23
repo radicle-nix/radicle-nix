@@ -33,8 +33,8 @@ in
 
       src = final.fetchgit {
         inherit (args.src) url;
-        rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${version}";
-        hash = "sha256-jhePgLG+vjDp56bIbt7rUNN9lyhqpnvtSmx176gDZrc=";
+        rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${version}.1";
+        hash = "sha256-rOJ80ZS1kWxh92yX51XaA8Xq1ibGn7UuBN9Grh5Cwx4=";
       };
 
       patches = [];
