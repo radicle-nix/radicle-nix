@@ -22,28 +22,34 @@ in
       passthru = {};
     };
   }
-  // (let version = "1.2.0-pre"; in lib.overlayRustPackage rec {
-    inherit final prev;
-    old = "radicle-node";
-    new = "${old}-1_2-pre";
-    override = args: {
-      inherit version;
-      name = new;
-      env.RADICLE_VERSION = version;
+  // (let
+    version = "1.2.0-pre";
+    tag = "${version}.2";
+  in
+    lib.overlayRustPackage rec {
+      inherit final prev;
+      old = "radicle-node";
+      new = "${old}-1_2-pre";
+      override = args: {
+        inherit version;
+        name = new;
+        env = {
+          RADICLE_VERSION = tag;
+        };
 
-      src = final.fetchgit {
-        inherit (args.src) url;
-        rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${version}.1";
-        hash = "sha256-rOJ80ZS1kWxh92yX51XaA8Xq1ibGn7UuBN9Grh5Cwx4=";
+        src = final.fetchgit {
+          inherit (args.src) url;
+          rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${tag}";
+          hash = "sha256-YHeJhtPZfazOJZbRe31oPya4TClZWu234MEP6/S9BZU=";
+        };
+
+        patches = [];
+
+        cargoHash = "sha256-Gb0OCpWb+sdcaW2pmxGi4vYQvgJrHEhtElrlEgHiJvc=";
+        doCheck = false;
+        passthru = {};
       };
-
-      patches = [];
-
-      cargoHash = "sha256-SIoHy21SPLAMFk9XwbfKCr9fgV/YzA2j4zT4zvBCbb0=";
-      doCheck = false;
-      passthru = {};
-    };
-  })
+    })
   // (lib.overlayRustPackage rec {
     inherit final prev;
     old = "radicle-node";
