@@ -23,13 +23,13 @@ in
     };
   }
   // (let
-    version = "1.2.0-pre";
-    tag = "${version}.2";
+    version = "1.2.0";
+    tag = "${version}";
   in
     lib.overlayRustPackage rec {
       inherit final prev;
       old = "radicle-node";
-      new = "${old}-1_2-pre";
+      new = "${old}-1_2";
       override = args: {
         inherit version;
         name = new;
@@ -40,12 +40,12 @@ in
         src = final.fetchgit {
           inherit (args.src) url;
           rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${tag}";
-          hash = "sha256-YHeJhtPZfazOJZbRe31oPya4TClZWu234MEP6/S9BZU=";
+          hash = "sha256-RB8yDfttVTkZmk01ubLkwrwD6IYo3Ehe7bPosJzoQk4=";
         };
 
         patches = [];
 
-        cargoHash = "sha256-Gb0OCpWb+sdcaW2pmxGi4vYQvgJrHEhtElrlEgHiJvc=";
+        cargoHash = "sha256-/6VlRwWtJfHf6tXD2HJUTbThwTYeZFTJqtaxclrm3+c=";
         doCheck = false;
         passthru = {};
       };
