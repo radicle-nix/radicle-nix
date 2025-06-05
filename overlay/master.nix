@@ -82,3 +82,25 @@ in
       passthru = {};
     };
   })
+  // (let
+    head = "ccb5e49ee0f445d2c90d20d4deec529d824aea33";
+  in
+    lib.overlayRustPackage rec {
+      inherit final prev;
+      old = "radicle-httpd";
+      new = "${old}-master";
+      override = args: {
+        name = new;
+        version = head;
+
+        src = final.fetchgit {
+          inherit (args.src) url;
+          name = "z4V1sjrXqjvFdnCUbxPFqd5p4DtH5";
+          rev = head;
+          hash = "sha256-Nh6djXdnBtfNc6YG3eeIWLlqk3s1vhxSf11tKKM+1JE=";
+          sparseCheckout = ["radicle-httpd"];
+        };
+
+        cargoHash = "sha256-4D6Lf7xWPUBA0VHgQlcXS8SaTKA/rq+x56FV9X8G7rM=";
+      };
+    })
