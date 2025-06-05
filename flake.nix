@@ -10,7 +10,7 @@
       inputs.systems.follows = "systems";
       url = "github:numtide/flake-utils";
     };
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     pre-commit-hooks = {
       inputs = {
