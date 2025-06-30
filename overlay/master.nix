@@ -1,5 +1,5 @@
 {lib}: final: prev: let
-  head = "41f9048d96596473600e6c77f041d29cd3de1d6f";
+  head = "78ba263d0a946c4b90235d562b56ceb7badfc965";
 in
   lib.overlayRustPackage rec {
     inherit final prev;
@@ -12,24 +12,24 @@ in
       src = final.fetchgit {
         inherit (args.src) url;
         rev = head;
-        hash = "sha256-jhePgLG+vjDp56bIbt7rUNN9lyhqpnvtSmx176gDZrc=";
+        hash = "sha256-XY5uMLIvaqnenICjp7yZDU0inofVdiygNlUrpfrMOfo=";
       };
 
       patches = [];
 
-      cargoHash = "sha256-SIoHy21SPLAMFk9XwbfKCr9fgV/YzA2j4zT4zvBCbb0=";
+      cargoHash = "sha256-4LH3b1xN+mYXb9fHFx9Ade551JryDai8JpmZtRYX7ts=";
       doCheck = false;
       passthru = {};
     };
   }
   // (let
-    version = "1.2.0";
+    version = "1.2.1-pre.0";
     tag = "${version}";
   in
     lib.overlayRustPackage rec {
       inherit final prev;
       old = "radicle-node";
-      new = "${old}-1_2";
+      new = "${old}-1_2_1-pre_0";
       override = args: {
         inherit version;
         name = new;
@@ -40,12 +40,12 @@ in
         src = final.fetchgit {
           inherit (args.src) url;
           rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${tag}";
-          hash = "sha256-RB8yDfttVTkZmk01ubLkwrwD6IYo3Ehe7bPosJzoQk4=";
+          hash = "sha256-XY5uMLIvaqnenICjp7yZDU0inofVdiygNlUrpfrMOfo=";
         };
 
         patches = [];
 
-        cargoHash = "sha256-/6VlRwWtJfHf6tXD2HJUTbThwTYeZFTJqtaxclrm3+c=";
+        cargoHash = "sha256-4LH3b1xN+mYXb9fHFx9Ade551JryDai8JpmZtRYX7ts=";
         doCheck = false;
         passthru = {};
       };
@@ -61,7 +61,7 @@ in
       src = final.fetchgit {
         inherit (args.src) url;
         rev = head;
-        hash = "sha256-jhePgLG+vjDp56bIbt7rUNN9lyhqpnvtSmx176gDZrc=";
+        hash = "sha256-XY5uMLIvaqnenICjp7yZDU0inofVdiygNlUrpfrMOfo=";
       };
 
       patches = [];
