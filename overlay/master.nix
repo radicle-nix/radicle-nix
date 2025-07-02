@@ -12,7 +12,13 @@ in
       src = final.fetchgit {
         inherit (args.src) url;
         rev = head;
-        hash = "sha256-xKymjQTtUfE8ncwhWWjDMC3eTw4CheykLSGKnBbOH6U=";
+        hash = "sha256-KW8S/ZTDbI56xs2YpPP84XAheeahy4/t0RNlZars18Q=";
+        leaveDotGit = true;
+        postFetch = ''
+          git -C $out rev-parse HEAD > $out/.git_head
+          git -C $out log -1 --pretty=%ct HEAD > $out/.git_time
+          rm -rf $out/.git
+        '';
       };
 
       patches = [];
