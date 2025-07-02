@@ -40,7 +40,7 @@ in
         src = final.fetchgit {
           inherit (args.src) url;
           rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${tag}";
-          hash = "sha256-+ZpiWeR5H4WBKCQnVrtC6Cmw8HmxRbBLx0XLz+h9uyA=";
+          hash = "sha256-KW8S/ZTDbI56xs2YpPP84XAheeahy4/t0RNlZars18Q=";
           leaveDotGit = true;
           postFetch = ''
             git -C $out rev-parse HEAD > $out/.git_head
