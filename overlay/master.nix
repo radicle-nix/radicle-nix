@@ -41,6 +41,7 @@ in
           inherit (args.src) url;
           rev = "refs/namespaces/z6MkireRatUThvd3qzfKht1S44wpm4FEWSSa4PRMTSQZ3voM/refs/tags/v${tag}";
           hash = "sha256-XY5uMLIvaqnenICjp7yZDU0inofVdiygNlUrpfrMOfo=";
+          leaveDotGit = true;
           postFetch = ''
             git -C $out rev-parse HEAD > $out/.git_head
             git -C $out log -1 --pretty=%ct HEAD > $out/.git_time
