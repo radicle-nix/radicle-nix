@@ -1,5 +1,5 @@
 {lib}: final: prev: let
-  head = "78ba263d0a946c4b90235d562b56ceb7badfc965";
+  head = "84427a56b5b7775b1f48254a338e2289838696c6";
 in
   lib.overlayRustPackage rec {
     inherit final prev;
@@ -12,12 +12,12 @@ in
       src = final.fetchgit {
         inherit (args.src) url;
         rev = head;
-        hash = "sha256-XY5uMLIvaqnenICjp7yZDU0inofVdiygNlUrpfrMOfo=";
+        hash = "sha256-xKymjQTtUfE8ncwhWWjDMC3eTw4CheykLSGKnBbOH6U=";
       };
 
       patches = [];
 
-      cargoHash = "sha256-4LH3b1xN+mYXb9fHFx9Ade551JryDai8JpmZtRYX7ts=";
+      cargoHash = "sha256-h5Ys/lsJksIqphwRu42oQ0YaAqpwiK2+Docw24bJc9s=";
       doCheck = false;
       passthru = {};
     };
