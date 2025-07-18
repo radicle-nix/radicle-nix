@@ -63,7 +63,7 @@ in
       };
     })
   // (let
-    head = "ccb5e49ee0f445d2c90d20d4deec529d824aea33";
+    head = "4cd680d464bcc6acfec8339882def3728eaf10f8";
   in
     lib.overlayRustPackage rec {
       inherit final prev;
@@ -77,10 +77,10 @@ in
           inherit (args.src) url;
           name = "z4V1sjrXqjvFdnCUbxPFqd5p4DtH5";
           rev = head;
-          hash = "sha256-Nh6djXdnBtfNc6YG3eeIWLlqk3s1vhxSf11tKKM+1JE=";
+          hash = "sha256-x2nS8xajHfeJ0WTCAypXOw3BoYAoVUZvtZ2fWXIl19s=";
           sparseCheckout = ["radicle-httpd"];
         };
 
-        cargoHash = "sha256-4D6Lf7xWPUBA0VHgQlcXS8SaTKA/rq+x56FV9X8G7rM=";
+        cargoHash = "sha256-of/I3hRtYt61VuWD4dxk44pHxhp7n2QQhS7kr2smN1g=";
       };
     })
