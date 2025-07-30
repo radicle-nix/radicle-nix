@@ -81,7 +81,7 @@
     in
       radiclePackages
       // {
-        inherit (pkgs) radicle-node-master radicle-node-1_3_0-pre_0 radicle-httpd-master;
+        inherit (pkgs) radicle-node-master radicle-node-1_3_0-pre_1 radicle-httpd-master;
       };
 
     rawNixosConfigurations = {};
